@@ -3,7 +3,7 @@ import numpy as np
 
 class TSNE:
 
-    def pairwise_distances(X):
+    def pairwise_distances(self, X):
         """
         input: vectors stored in a N*D array
         output: pairwise eulidean distances in a N*N array
@@ -17,7 +17,7 @@ class TSNE:
         # X[None, :] - X[:, None] = [N, N, D]
         # np.sum((X[None, :] - X[:, None]) ** 2, 2) = [N, N]
 
-    def p_conditional(dists, sigmas):
+    def p_conditional(self, dists, sigmas):
         """
         input:
         dists: N*N array
@@ -32,7 +32,7 @@ class TSNE:
         p = e / e.sum(axis=1).reshape(-1, 1)
         return p
 
-    def _perplexity(distribution):
+    def _perplexity(self, distribution):
         """
         input:
         distribution: N*N array
@@ -42,7 +42,7 @@ class TSNE:
         return 2**exponent
 
     def binary_search(
-        func, goal, tol=1e-10, max_iterations=1000, lower=1e-20, upper=1e4
+        self, func, goal, tol=1e-10, max_iterations=1000, lower=1e-20, upper=1e4
     ):
         """
         Perform binary search to find the sigma that results in the desired perplexity
