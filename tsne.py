@@ -11,7 +11,8 @@ class TSNE:
         """
         return np.sum(
             (X[None, :] - X[:, None]) ** 2, 2
-        )  # cool trick to perform pairwise euclidean distances calculation using numpu broadcasting rules
+        )  # cool trick to perform pairwise euclidean distances calculation using numpy broadcasting rules
+        # I want to return: diff_ij = ||x_i - x_j||^2 where ||x_i - x_j||^2 = sum in k (X_ik - X_jk)^2
         # X[None, :] = X[N, D] -> [1, N, D]
         # X[:, None] = X[N, D] -> [N, 1, D]
         # X[None, :] - X[:, None] = [N, N, D]
@@ -96,7 +97,7 @@ class TSNE:
         # inter: N*N array
         np.fill_diagonal(inter, 0.0)
 
-        return inter / np.sum(np.sum(inter))
+        return inter / np.sum(inter)
         # np.sum(np.sum(inter)) = scalar
         # return: N*N array
 
