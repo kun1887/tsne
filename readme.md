@@ -6,6 +6,6 @@ T-SNE is powerful statistical method for visualizing data points in high dimensi
 
 Demo notebook shows how t-SNE preserves cluster-like structures when projecting data points from 2d to 1d
 
-![t-SNE Visualization1](2d.png)
+<img src="2d.png" alt="t-SNE Visualization1" width="400">
 
-![t-SNE Visualization2](1d.png)
+<img src="1d.png" alt="t-SNE Visualization2" width="400">
